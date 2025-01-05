@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Thanish Portfolio - Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+            padding: 1rem 9%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #b74b4b;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: white;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #b74b4b;
+            border-bottom: 3px solid #b74b4b;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 3rem;
+            color: white;
+        }
+
+        @media (max-width: 995px) {
+            nav {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 60%;
+                border-left: 3px solid #b74b4b;
+                border-bottom: 3px solid #b74b4b;
+                border-bottom-left-radius: 2rem;
+                padding: 1rem;
+                background-color: #000000;
+                border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                align-items: flex-start;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+
+            nav.active {
+                transform: translateX(0);
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+
+            nav a:hover,
+            nav a.active {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border-bottom: 0.5rem solid #b74b4b;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 5rem 9%;
+        }
+
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .education-section {
+            width: 80%;
+            margin-bottom: 3rem;
+            border: 2px solid #b74b4b;
+            border-radius: 1rem;
+            padding: 2rem;
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .education-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-section h2 {
+            font-size: 2.5rem;
+            color: #b74b4b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+         .education-section h2 i {
+            margin-right: 1rem;
+            font-size: 2.5rem;
+            color: #b74b4b;
+            transition: transform 0.3s ease;
+        }
+
+        .education-section:hover h2 i {
+            transform: rotate(360deg);
+        }
+
+        .education-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-section p {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .education-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-section li {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+        
+        .education-section .course-list {
+            margin-top: 1rem;
+        }
+
+        .education-section .course-list h4 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #b74b4b;
+        }
+
+        .education-section .course-list ul {
+            margin-left: 2rem;
+        }
+
+        .education-section .course-list li {
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+            list-style-type: circle;
+        }
+
+        @media (max-width: 768px) {
+            .education-section {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Thanish</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="skill.html">Skills</a>
+            <a href="#" class="active">Education</a>
+             <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+    </header>
+    <section class="education">
+        <div class="education-container">
+            <div class="education-section">
+                <h2><i class="fas fa-graduation-cap"></i> Esoft Metro Campus</h2>
+                <p><strong>Location:</strong> Sri Lanka</p>
+                <p><strong>Degree/Certification:</strong> Higher National Diploma</p>
+                <p><strong>Major/Specialization:</strong> Software Engineering</p>
+                <p><strong>Dates of Attendance:</strong> May 2023 - Present</p>
+                <div class="course-list">
+                    <h4>Key Courses:</h4>
+                    <ul>
+                        <li>Object Oriented Programming</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Database Management Systems</li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="education-section">
+                <h2><i class="fas fa-certificate"></i> IDM Nation's Campus</h2>
+                 <p><strong>Location:</strong> Sri Lanka</p>
+                <p><strong>Degree/Certification:</strong> Diploma</p>
+                <p><strong>Major/Specialization:</strong> Information technologies</p>
+                <p><strong>Dates of Attendance:</strong> 2020 - 2022</p>
+                 <div class="course-list">
+                    <h4>Key Courses:</h4>
+                    <ul>
+                        <li>Introduction to Programming</li>
+                        <li>Computer Networks</li>
+                        <li>Operating Systems</li>
+                        <li>System Analysis and Design</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="education-section">
+                <h2><i class="fas fa-school"></i> Greenwich International School Edexcel</h2>
+                <p><strong>Location:</strong> Sri Lanka</p>
+                <p><strong>Degree/Certification:</strong> GCE Advanced Level</p>
+                <p><strong>Major/Specialization:</strong> Physical Science</p>
+                <p><strong>Dates of Attendance:</strong> 2007 - 2020</p>
+            </div>
+        </div>
+    </section>
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+
+      menuToggle.addEventListener('click', () => {
+          nav.classList.toggle('active');
+      });
+    </script>
+</body>
+</html>
